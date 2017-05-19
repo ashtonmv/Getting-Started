@@ -1,4 +1,4 @@
-# Part 2: Learn Linux and Python
+# Part 2: Learn Linux, Python and vim/emacs
 You haven't left the group after day one, which is a great sign!
 
 The objectives for this part don't require you to have any Hipergator or Stampede account, so they're great for doing while you're waiting on your accounts to open up.

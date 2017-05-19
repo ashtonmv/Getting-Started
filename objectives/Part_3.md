@@ -1,5 +1,5 @@
 # Part 3: Set up environments on your computers
-Some of the objectives in this part assume that you have an account on Hipergator and/or Stampede, so if those aren't set up for you yet, wait to do those things until they are.
+The objectives in this part assume that you have an account on Hipergator and/or Stampede, so if those aren't set up for you yet, wait to do these things until they are.
 
 It's up to you how much of the following you want to install on your own computer. You might find it convenient to
 run software on your own machine, or you might want to keep your computer clean and just run everything on the supercomputers. Below are instructions for setting up programming environments on your supercomputer accounts, but the instructions would be more or less the same if you want to get set up on your own computer.
