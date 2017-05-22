@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Part_3</title>
+
+
+<style type="text/css">
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ol,
+ul,
+li,
+img {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+html * {
+  font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", sans-serif;
+  font-size: 16px;
+  line-height: 19.2px;
+  color-profile: sRGB;
+}
+body {
+  margin: 40px 70px;
+}
+p {
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+strong {
+  font-weight: bold;
+}
+ol,
+ul {
+  margin-left: 2em;
+  margin-bottom: 20px;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 10px;
+}
+li {
+  margin-bottom: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
+  text-transform: capitalize;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h2 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h3 {
+  font-size: 23.44px;
+  line-height: 28.128px;
+}
+h4 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h5 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h6 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+img {
+  margin-bottom: 20px;
+}
+h1 img,
+h2 img,
+h3 img,
+h4 img,
+h5 img,
+h6 img,
+p img {
+  margin-bottom: 0;
+}
+pre {
+  margin-bottom: 20px;
+}
+pre,
+code {
+  font-family: monospace;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
+}
+blockquote {
+  border-left: 4px solid;
+  padding: 0 15px;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 15px;
+}
+h1 {
+  font-weight: bold;
+  border-bottom: 1px solid;
+}
+h2 {
+  border-bottom: 1px solid;
+}
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: none;
+}
+html * {
+  color: #657b83;
+}
+html body {
+  background-color: #fdf6e3;
+}
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #586e75;
+  border-color: #657b83;
+}
+html a,
+html a:active,
+html a:visited {
+  color: #586e75;
+}
+html a:hover {
+  background-color: #eee8d5;
+}
+html pre {
+  color: #586e75;
+  background-color: #eee8d5;
+}
+html a,
+html a:active,
+html a:visited,
+html code.url {
+  color: #b58900;
+}
+html h1 {
+  color: #b58900;
+}
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #b58900;
+}
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+  * {
+    color: #000 !important;
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Part 3: Set up environments on your computers</h1>
+
+<p>The objectives in this part assume that you have an account on Hipergator and/or Stampede, so if those aren&#39;t set up for you yet, wait to do these things until they are.</p>
+
+<p>It&#39;s up to you how much of the following you want to install on your own computer. You might find it convenient to
+run software on your own machine, or you might want to keep your computer clean and just run everything on the supercomputers. Below are instructions for setting up programming environments on your supercomputer accounts, but the instructions would be more or less the same if you want to get set up on your own computer.</p>
+
+<hr>
+
+<h2 id="toc_1">Creating a virtual environment</h2>
+
+<p>The cleanest way to get a Python environment up and running is to use a Miniconda virtual environment. You can install Miniconda on your account by downloading the Linux 64-bit bash installer <a href="https://conda.io/miniconda.html">here</a>, uploading it to Hipergator, and then running it. To upload files to/from Hipergator, open your terminal (mac/linux users) or Bash on Ubuntu (windows users) and enter the command:</p>
+
+<div><pre><code class="language-bash">$ scp path/to/file/on/your/computer your_username@hpg2.rc.ufl.edu:/path/where/you/want/the/file/on/hipergator</code></pre></div>
+
+<p>for example,</p>
+
+<div><pre><code class="language-bash">$ scp Downloads/Miniconda3-latest-Linux-x86_64.sh mashton@hpg2.rc.ufl.edu:/home/mashton/</code></pre></div>
+
+<p>will put the file in my home directory. It will ask for your Hipergator password, so type that in.</p>
+
+<p>To log into Hipergator, use this command, followed by your password:</p>
+
+<div><pre><code class="language-bash">$ ssh your_username@hpg2.rc.ufl.edu</code></pre></div>
+
+<p>That will put you in your home directory. For me, that&#39;s where my file is. You can see if the file is there by typing <code>ls</code>. To execute the script you just uploaded, you will need to change its permissions. To do this, type:</p>
+
+<div><pre><code class="language-shell">$ chmod 755 Miniconda3-latest-Linux-x86_64.sh
+$ ./Miniconda3-latest-Linux-x86_64.sh</code></pre></div>
+
+<p>That will execute the script, so just follow the instructions that it gives you after that. The default answers to every question should work just fine.</p>
+
+<p>Now you should have a new directory, <code>miniconda3</code>. To activate the miniconda environment, type</p>
+
+<div><pre><code class="language-none">$ source miniconda3/bin/activate</code></pre></div>
+
+<p>and to deactivate it, simply type <code>source deactivate</code>.</p>
+
+<h2 id="toc_2">Installing Software</h2>
+
+<p>If the environment is activated, you&#39;re ready to start installing the Python software packages we use in our group. To make sure your miniconda environment is working, type <code>which python</code>, and it should say <code>~/miniconda3/bin/python</code>. If it doesn&#39;t, deactivate and reactivate miniconda until it does. Then install Pymatgen, MPInterfaces and iPython:</p>
+
+<div><pre><code class="language-none">$ pip install pymatgen
+$ pip install mpinterfaces
+$ pip install ipython</code></pre></div>
+
+<p><strong>Pymatgen</strong> is a large python package developed by a group called the Materials Project in California, and it has lots of very useful tools for computational materials research. <strong>MPInterfaces</strong> is a python package developed in our group that acts as an extension, or wrapper, around Pymatgen to make certain actions easier to perform. Finally, <strong>iPython</strong> is an interactive python shell that you will be using to execute commands from both packages.</p>
+
+<h2 id="toc_3">Create an account with the Materials Project</h2>
+
+<p>Now&#39;s as good a time as any to create an account with the Materials Project, which is a huge database of materials&#39; crystal structures that you will probably find helpful in your research. Head over to <a href="https://materialsproject.org/">their website</a> and create an account. After you&#39;ve made an account, go to <a href="https://materialsproject.org/dashboard">your dashboard</a> and generate an API key. You will need this later. Feel free to browse around their website to see what kind of information they have in their database. All of their calculations are the same kind as the ones we perform in our group.</p>
+
+
+
+
+</body>
+
+</html>

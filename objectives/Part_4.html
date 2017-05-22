@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Part_4</title>
+
+
+<style type="text/css">
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ol,
+ul,
+li,
+img {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+html * {
+  font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", sans-serif;
+  font-size: 16px;
+  line-height: 19.2px;
+  color-profile: sRGB;
+}
+body {
+  margin: 40px 70px;
+}
+p {
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+strong {
+  font-weight: bold;
+}
+ol,
+ul {
+  margin-left: 2em;
+  margin-bottom: 20px;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 10px;
+}
+li {
+  margin-bottom: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
+  text-transform: capitalize;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h2 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h3 {
+  font-size: 23.44px;
+  line-height: 28.128px;
+}
+h4 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h5 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h6 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+img {
+  margin-bottom: 20px;
+}
+h1 img,
+h2 img,
+h3 img,
+h4 img,
+h5 img,
+h6 img,
+p img {
+  margin-bottom: 0;
+}
+pre {
+  margin-bottom: 20px;
+}
+pre,
+code {
+  font-family: monospace;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
+}
+blockquote {
+  border-left: 4px solid;
+  padding: 0 15px;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 15px;
+}
+h1 {
+  font-weight: bold;
+  border-bottom: 1px solid;
+}
+h2 {
+  border-bottom: 1px solid;
+}
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: none;
+}
+html * {
+  color: #657b83;
+}
+html body {
+  background-color: #fdf6e3;
+}
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #586e75;
+  border-color: #657b83;
+}
+html a,
+html a:active,
+html a:visited {
+  color: #586e75;
+}
+html a:hover {
+  background-color: #eee8d5;
+}
+html pre {
+  color: #586e75;
+  background-color: #eee8d5;
+}
+html a,
+html a:active,
+html a:visited,
+html code.url {
+  color: #b58900;
+}
+html h1 {
+  color: #b58900;
+}
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #b58900;
+}
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+  * {
+    color: #000 !important;
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Part 4: Getting to know Hipergator (and Stampede)</h1>
+
+<p>Hipergator and Stampede, or really any modern research-grade supercomputer, are very powerful machines that work a little differently from your laptop. Below are a few things you should know about how these computers are set up and how to use them.</p>
+
+<p>For simplicity, I&#39;ll only talk about Hipergator here, but for the most part Stampede and Hipergator work in a similar way.</p>
+
+<hr>
+
+<h2 id="toc_1">Infrastructure</h2>
+
+<p>It might be helpful to think of Hipergator as being 3 different partitions of nodes (aka processors) on a single computer. The nodes in the first partition are the <strong>login nodes</strong>, the second are the <strong>scratch storage nodes</strong>, and the third are the <strong>compute nodes</strong>. Each are used for different purposes, and you will need to understand all three to use the computer correctly.</p>
+
+<p><strong>--- Login nodes ---</strong></p>
+
+<p>As you might have guessed, these are the nodes to which you log in when you connect via <code>ssh</code> to hipergator. Your <code>/home/your_username</code> directory is the most important thing located here. Everything you store here is automatically backed up and pretty safe, but you have a limited amount of storage so you don&#39;t want to store all your research data here. The main thing you will keep here are software packages that you install. Most users prefer to have a <code>software/</code> folder under their home folder so they can keep everything tidy. If you&#39;ve been following the previous objectives, you should have a folder called <code>miniconda3</code> under your home folder.</p>
+
+<p><strong>--- Scratch storage nodes ---</strong></p>
+
+<p>Okay, since you don&#39;t want to store your research data (which is often several hundred GB) under your home folder, where should you put it? That&#39;s what the scratch nodes are for. These guys are not backed up but you have a much larger allotment of storage here. Actually, the group shares a quota of a few TB, so it&#39;s still not nice to hog all of that up, but you can keep your research data here with no problem.</p>
+
+<p>That means that you should switch to these nodes whenever you&#39;re running calculations that generate data. These nodes are located under <code>/ufrc/</code> (<strong>UF</strong> <strong>R</strong>esearch <strong>C</strong>omputing) on Hipergator. On other machines like Stampede, they&#39;re under <code>/scratch/</code>. So to switch to them, simply <code>cd /ufrc/hennig/your_username</code>.</p>
+
+<p>Eventually, you will create directories here to store your calculation results, etc. You want to submit your calculations from these nodes.</p>
+
+<p><strong>--- Compute nodes ---</strong></p>
+
+<p>When you submit a job from the scratch nodes, you&#39;re sending it to one of the compute nodes to do the actual work. You almost never work directly on these nodes, unless you want to <a href="https://wiki.rc.ufl.edu/doc/Development_and_Testing">run a developmental session</a> to test something quickly. These perform the calculation as specified by the instructions in your submission script and return the results to the scratch node directory where you launched the calculation from. An example submission script for Hipergator is detailed in the next section.</p>
+
+<h2 id="toc_2">Usage</h2>
+
+<p>Below is an example submission script, which you would prepare somewhere on your scratch filesystem and then submit to the compute nodes to run.</p>
+
+<div><pre><code class="language-none">#!/bin/bash
+#SBATCH --job-name=TEST              # The name of the job
+#SBATCH -o out_%j.log                # The stdout file
+#SBATCH -e err_%j.log                # The stderr file
+#SBATCH --qos=hennig-b               # Your group queue name
+#SBATCH --nodes=1                    # Number of copmute nodes you want working on your job
+#SBATCH --ntasks=1                   # Number of processors you want working on your job
+#SBATCH --mem-per-cpu=100mb          # Amount of virtual memory to reserve for running your job
+#SBATCH -t 00:01:00                  # Amount of time you think your job will take (if exceeded, job will die!)
+cd $SLURM_SUBMIT_DIR                 # Tell the compute node to go into your working directory on scratch
+echo &#39;Your job worked!&#39; &gt; test.txt   # Perform the actual command you want</code></pre></div>
+
+<p>When you have a submission script ready and located on your scratch filesystem, submit it to the compute nodes via <code>sbatch whatever_you_named_your_submission_script</code>.</p>
+
+<p>Hipergator uses a tool called SLURM to schedule all of its jobs, since hundreds of users are submitting thousands of jobs to their compute nodes every day. Our group has several hundred cores reserved for only our use, but we are often using all of them. This means that you might have to wait a little while (or even a few days in some cases) for your job to get its turn and run. You can check the status of all the jobs you currently have submitted via <code>squeue -u your_username</code>. This will give an output like this:
+<code>
+JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+7198142 hpg2-comp mp-57109  mashton PD       0:00      1 (Priority)
+</code>
+The main things to read from this output are the JOBID, ST (STatus) and TIME. ST is the job status, and &quot;PD&quot; means pending. The only other status you are likely to see is &quot;R&quot; for running. If you decide you want to cancel a pending or running job, type <code>scancel JOBID</code>, where you should replace JOBID with the actual JOBID corresponding to the job. Sadly, if you notice that the TIME is getting close to the total walltime you requested for the job, there is very little you can do and your job will probably be killed by the SLURM scheduler. Just ask for more time the next time you submit.</p>
+
+
+
+
+</body>
+
+</html>

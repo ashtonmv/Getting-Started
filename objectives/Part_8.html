@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Part_8</title>
+
+
+<style type="text/css">
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ol,
+ul,
+li,
+img {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+html * {
+  font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", sans-serif;
+  font-size: 16px;
+  line-height: 19.2px;
+  color-profile: sRGB;
+}
+body {
+  margin: 40px 70px;
+}
+p {
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+strong {
+  font-weight: bold;
+}
+ol,
+ul {
+  margin-left: 2em;
+  margin-bottom: 20px;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 10px;
+}
+li {
+  margin-bottom: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
+  text-transform: capitalize;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h2 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h3 {
+  font-size: 23.44px;
+  line-height: 28.128px;
+}
+h4 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h5 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h6 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+img {
+  margin-bottom: 20px;
+}
+h1 img,
+h2 img,
+h3 img,
+h4 img,
+h5 img,
+h6 img,
+p img {
+  margin-bottom: 0;
+}
+pre {
+  margin-bottom: 20px;
+}
+pre,
+code {
+  font-family: monospace;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
+}
+blockquote {
+  border-left: 4px solid;
+  padding: 0 15px;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 15px;
+}
+h1 {
+  font-weight: bold;
+  border-bottom: 1px solid;
+}
+h2 {
+  border-bottom: 1px solid;
+}
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: none;
+}
+html * {
+  color: #657b83;
+}
+html body {
+  background-color: #fdf6e3;
+}
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #586e75;
+  border-color: #657b83;
+}
+html a,
+html a:active,
+html a:visited {
+  color: #586e75;
+}
+html a:hover {
+  background-color: #eee8d5;
+}
+html pre {
+  color: #586e75;
+  background-color: #eee8d5;
+}
+html a,
+html a:active,
+html a:visited,
+html code.url {
+  color: #b58900;
+}
+html h1 {
+  color: #b58900;
+}
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #b58900;
+}
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+  * {
+    color: #000 !important;
+  }
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Part 8: Extras</h1>
+
+<p>You&#39;ve come a long way! Below are just a few fun or helpful things that you might want to have in place to facilitate your research.</p>
+
+<hr>
+
+<h2 id="toc_1">ssh keys</h2>
+
+<p>If you&#39;re tired of entering your password every time you log into Hipergator, you can set up what&#39;s called an ssh key to give your laptop automatic login credentials. This is especially useful if you have to download lots of files at one time, since normally you have to enter your password for each file. To set up an ssh key between your computer and Hipergator, first do the following on your laptop:</p>
+
+<div><pre><code class="language-none">$ ssh-keygen -t rsa</code></pre></div>
+
+<p>Press enter to use the default values for every question it asks you. Then,</p>
+
+<div><pre><code class="language-none">$ cat ~/.ssh/id_rsa.pub</code></pre></div>
+
+<p>and copy the contents of the output. Open a terminal tab on Hipergator, and open the file <code>~/.ssh/authorized_keys</code>. Paste the key that you copied from your computer to the bottom of this file. That&#39;s it! Try ssh&#39;ing from your computer to Hipergator to make sure that it worked.</p>
+
+<h2 id="toc_2">iTerm 2 Users: imgcat and it2dl</h2>
+
+<p>If you&#39;re a mac user and you have iTerm 2 installed, you can use two utilities to save you from doing two of the most tedious tasks. <code>imgcat</code> is a utility to view images inside of your terminal window so you don&#39;t have to download them. <code>it2dl</code> is a tool for automatically downloading files from whatever computer you&#39;re working on to your laptop Downloads folder. To install <code>imgcat</code> and <code>it2dl</code>, click &quot;Install Shell Integration&quot; from the imgcat dropdown menu:</p>
+
+<p><img src="img/shell_integration.png" style="width: 100%; max-width: 600px;"/></p>
+
+<p>Then, select &quot;remember my choice&quot;, and click &quot;install shell integration and utilities&quot;. Then click &quot;OK&quot;.</p>
+
+<p>You will have to do this for each computer account where you want these features. In the image above, I&#39;m doing it for my Hipergator account since that&#39;s the tab I have open. If I had my Hydrogen tab active (next to it, on the right), then the utilities would be installed on Hydrogen, etc.</p>
+
+<p>Their usage is very simple- just type <code>it2dl</code> or <code>imgcat</code> and then a filename, like this:</p>
+
+<p><img src="img/imgcat.png" style="width: 100%; max-width: 600px;"/></p>
+
+<p>Pretty dope, right?</p>
+
+
+
+
+</body>
+
+</html>

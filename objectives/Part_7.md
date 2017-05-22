@@ -40,7 +40,7 @@ When it's done, plot the band structure:
 ```
 $ ipython
 In [1]: from mpinterfaces.mat2d.electronic_structure.analysis import plot_band_structure
-In [3]: plot_band_structure()
+In [2]: plot_band_structure()
 ```
 
 Is your material a metal or a semiconductor? Its band structure plot should look like the one on its data page on MaterialsWeb.
