@@ -33,7 +33,7 @@ Below is an example submission script, which you would prepare somewhere on your
 #SBATCH -o out_%j.log                # The stdout file
 #SBATCH -e err_%j.log                # The stderr file
 #SBATCH --qos=hennig-b               # Your group queue name
-#SBATCH --nodes=1                    # Number of copmute nodes you want working on your job
+#SBATCH --nodes=1                    # Number of compute nodes you want working on your job
 #SBATCH --ntasks=1                   # Number of processors you want working on your job
 #SBATCH --mem-per-cpu=100mb          # Amount of virtual memory to reserve for running your job
 #SBATCH -t 00:01:00                  # Amount of time you think your job will take (if exceeded, job will die!)
