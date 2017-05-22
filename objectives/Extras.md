@@ -1,4 +1,4 @@
-# Part 8: Extras
+# Miscellaneous Setup Options
 
 You've come a long way! Below are just a few fun or helpful things that you might want to have in place to facilitate your research.
 
