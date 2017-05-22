@@ -87,4 +87,4 @@ queue_system: slurm
 queue_template: config_files/
 ```
 
-Save and quit that file, and now you're ready to use MPInterfaces to submit jobs.
+Save and quit that file, and now you're ready to use MPInterfaces.
