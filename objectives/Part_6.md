@@ -4,30 +4,6 @@ A lot of the work you did in writing and reading files from the Si relaxation is
 
 ----------
 
-## Configuring MPInterfaces
-You already installed MPInterfaces a while ago, but you might not have actually configured it with your system's settings. MPInterfaces is a tool that will set up and launch VASP jobs for you based on some reasonable default INCAR & KPOINTS parameters. The only thing it can't do is predict which structure you want to study, since that would require telepathy. Before it can launch jobs for you, though, it needs to know a few things about you. This is not a one-way relationship, after all.
-
-You need to edit the mpint_config.yaml file that came with MPInterfaces to contain your settings. First, copy the config file to its permanent location:
-
-```
-$ cp /home/your_username/software/MPInterfaces/config_files/mpint_config.yaml /home/your_username/software/MPInterfaces/mpinterfaces/
-```
-Then we'll edit the version of the configuration file under /home/your_username/software/MPInterfaces/mpinterfaces/ with the following (use vim or emacs to edit the file):
-
-```
-username: # your UF HPC username
-mp_api: # your Materials Project API key. You can find your API key at https://materialsproject.org/open
-normal_binary: /home/mashton/vasp.5.4.1/bin/vasp # /path/to/std/vasp/
-executable. You are probably okay putting /home/mashton/vasp.5.4.1/bin/vasp
-twod_binary: /home/mashton/vasp.5.4.1/bin/vasp_noz  # /path/to/2D/vasp/executable
-vdw_kernel: /home/mashton/vasp.5.4.1/vdw_kernel.bindat  # /path/to/vdw_kernel.bindat file. Leave as null if the kernel is hard-coded into VASP. Ask the VASP manager in the group about this.
-potentials: /home/mashton/POTCARS  # /path/to/your/POTCAR/files
-queue_system: slurm
-queue_template: config_files/
-```
-
-Save and quit that file, and now you're ready to use MPInterfaces to submit jobs.
-
 ## Launching a basic relaxation
 Let's test out MPInterfaces for relaxing silicon. Go to your scratch (`cd /ufrc/hennig/your_username`) and make a new directory called `Si_mpinterfaces`. Copy the POSCAR file from `Si_test` to `Si_mpinterfaces`, and then go into Si_MPInterfaces. The easiest way to use MPInterfaces for launching jobs is to use ipython. So start an ipython session:
 

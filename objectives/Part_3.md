@@ -48,6 +48,10 @@ $ pip install ipython
 ```
 `pip` is a convenient tool that came with your miniconda virtual environment and installs Python packages that are listed on the Python package index. **Pymatgen** is a large python package developed by a group called the Materials Project in California, and it has lots of very useful tools for computational materials research. **iPython** is an interactive python shell that you will be using to execute commands from both packages.
 
+
+## Create an account with the Materials Project
+Now's as good a time as any to create an account with the Materials Project, which is a huge database of materials' crystal structures that you will probably find helpful in your research. Head over to [their website](https://materialsproject.org/) and create an account. After you've made an account, go to [your dashboard](https://materialsproject.org/dashboard) and generate an API key. You will need this key in just a second. Feel free to browse around their website to see what kind of information they have in their database. All of their calculations are the same kind as the ones we perform in our group.
+
 ## Install MPInterfaces
 **MPInterfaces** is a software package developed in our group that acts as a wrapper around Pymatgen to make certain tasks even easier. Visit the [Github page](https://github.com/henniggroup/mpinterfaces) to check it out. You're about to install that software on your Hipergator account. Navigate to your `software` directory under your home directory and issue the following commands:
 
@@ -55,12 +59,32 @@ $ pip install ipython
 $ module load git
 $ git clone https://github.com/henniggroup/MPInterfaces.git
 ```
-You'll notice that you have a new directory called `MPInterfaces`, and its contents are exactly the same as what's on the Github page. To let Python know that you've installed MPInterfaces, you need to add its location to your $PYTHONPATH environment variable ([learn about environment variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps)). To do this, open your `~/.bashrc` file and add the following line:
+You'll notice that you have a new directory called `MPInterfaces`, and its contents are exactly the same as what's on the Github page. To let Python know that you've installed MPInterfaces, you need to add its location to your $PYTHONPATH environment variable ([learn about environment variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps)). To do this, open your `~/.bashrc` file with vim or emacs and add the following line:
 
 ```
 export PYTHONPATH=$PYTHONPATH:/home/your_username/software/MPInterfaces
 ```
 As a quick tip, your `~/.bashrc` file lists any commands you want to run every time you log into Hipergator. So you could add a command to source your miniconda environment to this file if you wanted to, or have it `echo` you a welcome message every time you log in. To activate the changes you just made, type `source ~/.bashrc`. If you type `echo $PYTHONPATH`, it should end with `/home/your_username/software/MPInterfaces`.
 
-## Create an account with the Materials Project
-Now's as good a time as any to create an account with the Materials Project, which is a huge database of materials' crystal structures that you will probably find helpful in your research. Head over to [their website](https://materialsproject.org/) and create an account. After you've made an account, go to [your dashboard](https://materialsproject.org/dashboard) and generate an API key. You will need this later. Feel free to browse around their website to see what kind of information they have in their database. All of their calculations are the same kind as the ones we perform in our group.
+MPInterfaces is a tool that will set up and launch VASP jobs for you based on some reasonable default INCAR & KPOINTS parameters. The only thing it can't do is predict which structure you want to study, since that would require telepathy. Before it can launch jobs for you, though, it needs to know a few things about you. This is not a one-way relationship, after all.
+
+You need to edit the mpint_config.yaml file that came with MPInterfaces to contain your settings. First, copy the config file to its permanent location:
+
+```
+$ cp /home/your_username/software/MPInterfaces/config_files/mpint_config.yaml /home/your_username/software/MPInterfaces/mpinterfaces/
+```
+Then we'll edit the version of the configuration file under `/home/your_username/software/MPInterfaces/mpinterfaces/` with the following (use vim or emacs to edit the file):
+
+```
+username: # your UF HPC username
+mp_api: # your Materials Project API key. You can find your API key at https://materialsproject.org/open
+normal_binary: /home/mashton/vasp.5.4.1/bin/vasp # /path/to/std/vasp/
+executable. You are probably okay putting /home/mashton/vasp.5.4.1/bin/vasp
+twod_binary: /home/mashton/vasp.5.4.1/bin/vasp_noz  # /path/to/2D/vasp/executable
+vdw_kernel: /home/mashton/vasp.5.4.1/vdw_kernel.bindat  # /path/to/vdw_kernel.bindat file. Leave as null if the kernel is hard-coded into VASP. Ask the VASP manager in the group about this.
+potentials: /home/mashton/POTCARS  # /path/to/your/POTCAR/files
+queue_system: slurm
+queue_template: config_files/
+```
+
+Save and quit that file, and now you're ready to use MPInterfaces to submit jobs.
