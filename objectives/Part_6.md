@@ -7,21 +7,12 @@ A lot of the work you did in writing and reading files from the Si relaxation is
 ## Configuring MPInterfaces
 You already installed MPInterfaces a while ago, but you might not have actually configured it with your system's settings. MPInterfaces is a tool that will set up and launch VASP jobs for you based on some reasonable default INCAR & KPOINTS parameters. The only thing it can't do is predict which structure you want to study, since that would require telepathy. Before it can launch jobs for you, though, it needs to know a few things about you. This is not a one-way relationship, after all.
 
-You need to edit the mpint_config.yaml file that came with MPInterfaces to contain your settings. To find where this file is, start an ipython session:
+You need to edit the mpint_config.yaml file that came with MPInterfaces to contain your settings. First, copy the config file to its permanent location:
 
 ```
-$ ipython
-In [1]: from mpinterfaces import PACKAGE_PATH
-In [2]: print(PACKAGE_PATH)
-/home/mashton/software/MPInterfaces/mpinterfaces
-In [3]: exit
+$ cp /home/your_username/software/MPInterfaces/config_files/mpint_config.yaml /home/your_username/software/MPInterfaces/mpinterfaces/
 ```
-It should say something similar to that. Type
-
-```
-$ cp /home/mashton/software/MPInterfaces/config_files/mpint_config.yaml /home/mashton/software/MPInterfaces/mpinterfaces/
-```
-Obviously, replace my paths with your own and then we'll edit the version of the configuration file under /home/mashton/software/MPInterfaces/mpinterfaces/ with the following (use vim or emacs to edit the file):
+Then we'll edit the version of the configuration file under /home/your_username/software/MPInterfaces/mpinterfaces/ with the following (use vim or emacs to edit the file):
 
 ```
 username: # your UF HPC username
@@ -35,7 +26,7 @@ queue_system: slurm
 queue_template: config_files/
 ```
 
-Now you're ready to use MPInterfaces to submit jobs.
+Save and quit that file, and now you're ready to use MPInterfaces to submit jobs.
 
 ## Launching a basic relaxation
 Let's test out MPInterfaces for relaxing silicon. Go to your scratch (`cd /ufrc/hennig/your_username`) and make a new directory called `Si_mpinterfaces`. Copy the POSCAR file from `Si_test` to `Si_mpinterfaces`, and then go into Si_MPInterfaces. The easiest way to use MPInterfaces for launching jobs is to use ipython. So start an ipython session:
