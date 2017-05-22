@@ -45,6 +45,37 @@ $ module load ufrc
 $ slurmInfo -g hennig
 ```
 
+**--- Cancel a large number of SLURM jobs at once ---**
+
+Sometimes you goofed and submitted dozens or hundreds of jobs that you don't actually want to run. Instead of canceling them one at a time, you can cancel all of them at once. Copy the contents below to a file called `cancel_jobs` (or whatever you want to name it) located in `/home/your_username/bin/`.
+
+```
+#!/bin/bash
+
+squeue -u your_username > jobs_qstat
+grep 'your_username' jobs_qstat | cut -c 12-18,48-49 > job_ids
+
+while read line; do
+    ID=$(echo "$line" | cut -c 1-7)
+    STAT=$(echo "$line" | cut -c 8-9)
+
+    if [ "$ID" -ge "$1" ] && [ "$ID" -le "$2" ] && [ "$STAT" != "C" ]; then
+        scancel $ID
+    fi
+
+done <job_ids
+
+rm job_ids
+rm jobs_qstat
+```
+If the following is not already in your ~/.bashrc, then add it:
+
+```
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+```
+Finally, `chmod 755 /home/your_username/bin/cancel_jobs`. To use this tool, type `cancel_jobs JOB_ID_1 JOB_ID_2`, where `JOB_ID_1` and `JOB_ID_2` should be the JOB_ID's of the first and last jobs defining the range you want to cancel.
 
 ## Python Recipes
 **--- Make a list of all directories in the current one ---**
