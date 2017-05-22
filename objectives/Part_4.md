@@ -41,7 +41,7 @@ cd $SLURM_SUBMIT_DIR                 # Tell the compute node to go into your wor
 echo 'Your job worked!' > test.txt   # Perform the actual command you want
 ```
 
-When you have a submission script ready and located on your scratch filesystem, submit it to the compute nodes via ``sbatch whatever_you_named_your_submission_script``.
+Whenever you have a submission script ready and located on your scratch filesystem, you can submit it to the compute nodes via ``sbatch whatever_you_named_your_submission_script``.
 
 Hipergator uses a tool called SLURM to schedule all of its jobs, since hundreds of users are submitting thousands of jobs to their compute nodes every day. Our group has several hundred cores reserved for only our use, but we are often using all of them. This means that you might have to wait a little while (or even a few days in some cases) for your job to get its turn and run. You can check the status of all the jobs you currently have submitted via ``squeue -u your_username``. This will give an output like this:
 ```
