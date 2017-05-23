@@ -1,5 +1,5 @@
 # Part 8: Using Pymatgen
-[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_7.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Extras.md) 
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_7.md)
 
 Pymatgen is your friend! It was designed by people who are working on similar research projects to us, and it's a pretty well-tested piece of software. It can do a lot of things for you in a faster, cleaner and safer way than you could probably do it by hand. It's worth learning a little bit about how to use it now, while you're getting started on your research.
 
@@ -181,4 +181,4 @@ In [16]: print(band_structure.bands[Spin.up])
  [ 11.8153  11.4475  11.9706 ...,  11.4094  11.5737  11.6697]]
 In [17]: exit
 ```
-[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_7.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Extras.md)
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_7.md)
