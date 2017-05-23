@@ -1,4 +1,6 @@
 # Part 4: Getting to know Hipergator (and Stampede)
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_3.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_5.md)
+
 Hipergator and Stampede, or really any modern research-grade supercomputer, are very powerful machines that work a little differently from your laptop. Below are a few things you should know about how these computers are set up and how to use them.
 
 For simplicity, I'll only talk about Hipergator here, but for the most part Stampede and Hipergator work in a similar way.
@@ -50,3 +52,5 @@ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 7198142 hpg2-comp mp-57109  mashton PD       0:00      1 (Priority)
 ```
 The main things to read from this output are the JOBID, ST (STatus) and TIME. ST is the job status, and "PD" means pending. The only other status you are likely to see is "R" for running. If you decide you want to cancel a pending or running job, type ``scancel JOBID``, where you should replace JOBID with the actual JOBID corresponding to the job. Sadly, if you notice that the TIME is getting close to the total walltime you requested for the job, there is very little you can do and your job will probably be killed by the SLURM scheduler. Just ask for more time the next time you submit.
+
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_3.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_5.md)

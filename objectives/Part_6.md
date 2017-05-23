@@ -1,5 +1,7 @@
 # Part 6: Automating VASP jobs with MPInterfaces
 
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_5.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_7.md)
+
 A lot of the work you did in writing and reading files from the Si relaxation is stuff that a computer can do. Below you will see how to use MPInterfaces to automatically launch and analyze VASP calculations.
 
 ----------
@@ -55,3 +57,5 @@ and then open the PDF file however you normally would. It should look like this:
 <img src="img/band_structure.png" style="width: 100%; max-width: 600px;"/>
 
 You can see that the band structure you calculated shows an indirect band gap from Gamma to a point near X. That's exactly what we were hoping for. If you're very keen, you'll also notice that the band gap we just calculated for silicon is much lower than its actual band gap (1.1 eV). This is a well-known problem with the theory behind VASP, and there are ways to improve on thisby performing more demanding calculations that take much longer than the one we just ran. If you really feel like it, you can run one of these more accurate calculations for silicon using MPInterfaces by substituting `run_pbe_calculation` with `run_hse_calculation` in the code snippet above. The `plot_band_structure()` function will work the same way for this calculation, which will run in a directory called `hse_bands`.
+
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_5.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_7.md)

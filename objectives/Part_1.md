@@ -1,4 +1,6 @@
 # Part 1: The Basics
+[Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_2.md)
+
 It's your first day in the group! Hopefully you're already connected to another student who is "mentoring" you to help you get started. If that's not the case, then you can probably just ask whoever is sitting closest to you if they will help you out. Everyone in the group is very willing to help you or at least point you in the right direction if you have any questions, so don't be afraid to ask!
 
 The things you should try to take care of today are pretty simple and not research-related.
@@ -15,3 +17,5 @@ The things you should try to take care of today are pretty simple and not resear
 5. **Windows users**: you will need to install Bash on Ubuntu (or similar) in order to run a command line environment. Instructions for installing Bash on Ubuntu can be found [here](https://msdn.microsoft.com/en-us/commandline/wsl/install_guide).
 6. **Mac users**: You already have an application called Terminal installed. It's recommended that you install [iTerm 2](https://www.iterm2.com/), an application that does everything Terminal does plus a few helpful extensions.
 7. Eventually, you will want a program for visualizing crystal structures on your computer. Most people in the group use [VESTA](http://jp-minerals.org/vesta/en/download.html) for day-to-day use, but if you find something else you like then go for it. The department also has a license to Crystal Maker, which makes nice PDF images for publications, etc.
+
+[Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_2.md)
