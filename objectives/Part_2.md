@@ -1,5 +1,5 @@
 # Part 2: Learn Linux, Python and vim/emacs
-[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_1.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_3.md)
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_1.md) | [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_3.md)
 
 You haven't given up after day one, which is a great sign!
 
@@ -12,4 +12,4 @@ It might take you a week or two to finish these courses, so it might be best to 
 
 2. It will also benefit you greatly to learn vim or emacs. These are programs for editing text files from the command line environment and you will use them all the time. There are several good tutorials out there, like [openvim](https://openvim.com) and [GNU's emacs tour](https://www.gnu.org/software/emacs/tour/).
 
-[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_1.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_3.md)
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_1.md) | [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_3.md)
