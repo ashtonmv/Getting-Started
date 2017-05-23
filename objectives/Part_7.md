@@ -1,5 +1,5 @@
 # Part 7: Using MPInterfaces to study 2D materials
-[Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_6.md) [Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_8.md)
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_6.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_8.md)
 
 Silicon was kind of a boring example, right? Chances are your research project will involve studying some kind of 2D materials, since they are a major focus in the Hennig group. Below you will get a chance to perform VASP calculations for a 2D material (of your choosing! See how not boring we're being now?) similar to what you did for silicon a moment ago.
 
@@ -98,4 +98,4 @@ In [3]: exit
 ```
 That value is in eV/atom, so you can see that VSe2 is well within the 0.15 eV/atom cutoff. Compare your calculated hull distance with the Formation Energy listed on its data page on MaterialsWeb (formation energy is, in this case, just another name for hull distance).
 
-[Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_6.md) [Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_8.md)
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_6.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_8.md)
