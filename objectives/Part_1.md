@@ -7,7 +7,7 @@ The things you should try to take care of today are pretty simple and not resear
 
 1. Pick out and set up a workspace or desk in Rhines 267 or Rhines 269, wherever there's a place you like.
 2. Request an account on Hipergator:
-  * Visit https://www.rc.ufl.edu/access/hipergator/account-request/ and follow the instructions.
+  * Visit [the account request page](https://www.rc.ufl.edu/access/hipergator/account-request/) and follow the instructions.
   * Richard Hennig is probably your faculty sponsor. For Type of Research, enter "computational materials science"
   * This will send an email to Dr. Hennig for his approval, and once he gives it you should be all set up. If he hasn't responded within a few days, feel free to email and make sure he got the request.
 3. If someone has suggested you should work on Stampede, then request an account by following the instructions [here](https://portal.tacc.utexas.edu/account-request). If no one has mentioned Stampede to you, then don't worry about this.

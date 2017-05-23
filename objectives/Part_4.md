@@ -27,7 +27,7 @@ When you submit a job from the scratch nodes, you're sending it to one of the co
 
 Below is an example submission script, which you would prepare somewhere on your scratch filesystem and then submit to the compute nodes to run.
 
-```
+```bash
 #!/bin/bash
 #SBATCH --job-name=TEST              # The name of the job
 #SBATCH -o out_%j.log                # The stdout file
@@ -44,6 +44,7 @@ echo 'Your job worked!' > test.txt   # Perform the actual command you want
 Whenever you have a submission script ready and located on your scratch filesystem, you can submit it to the compute nodes via ``sbatch whatever_you_named_your_submission_script``.
 
 Hipergator uses a tool called SLURM to schedule all of its jobs, since hundreds of users are submitting thousands of jobs to their compute nodes every day. Our group has several hundred cores reserved for only our use, but we are often using all of them. This means that you might have to wait a little while (or even a few days in some cases) for your job to get its turn and run. You can check the status of all the jobs you currently have submitted via ``squeue -u your_username``. This will give an output like this:
+
 ```
 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 7198142 hpg2-comp mp-57109  mashton PD       0:00      1 (Priority)

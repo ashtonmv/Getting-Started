@@ -26,7 +26,7 @@ $ ssh your_username@hpg2.rc.ufl.edu
 
 That will put you in your home directory. For me, that's where my file is. You can see if the file is there by typing ``ls``. To execute the script you just uploaded, you will need to change its permissions. To do this, type:
 
-```shell
+```bash
 $ chmod 755 Miniconda3-latest-Linux-x86_64.sh
 $ ./Miniconda3-latest-Linux-x86_64.sh
 ```
@@ -34,7 +34,7 @@ That will execute the script, so just follow the instructions that it gives you 
 
 Now you should have a new directory, ``miniconda3``. To activate the miniconda environment, type
 
-```
+```bash
 $ source miniconda3/bin/activate
 ```
 and to deactivate it, simply type ``source deactivate``.
@@ -42,7 +42,7 @@ and to deactivate it, simply type ``source deactivate``.
 ## Install Pymatgen and ipython with pip
 If the environment is activated, you're ready to start installing the Python software packages we use in our group. To make sure your miniconda environment is working, type ``which python``, and it should say ``~/miniconda3/bin/python``. If it doesn't, deactivate and reactivate miniconda until it does. Then install Pymatgen, MPInterfaces and iPython:
 
-```
+```bash
 $ pip install pymatgen
 $ pip install ipython
 ```
@@ -55,13 +55,13 @@ Now's as good a time as any to create an account with the Materials Project, whi
 ## Install MPInterfaces
 **MPInterfaces** is a software package developed in our group that acts as a wrapper around Pymatgen to make certain tasks even easier. Visit the [Github page](https://github.com/henniggroup/mpinterfaces) to check it out. You're about to install that software on your Hipergator account. Navigate to your `software` directory under your home directory and issue the following commands:
 
-```
+```bash
 $ module load git
 $ git clone https://github.com/henniggroup/MPInterfaces.git
 ```
 You'll notice that you have a new directory called `MPInterfaces`, and its contents are exactly the same as what's on the Github page. To let Python know that you've installed MPInterfaces, you need to add its location to your $PYTHONPATH environment variable ([learn about environment variables](https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps)). To do this, open your `~/.bashrc` file with vim or emacs and add the following line:
 
-```
+```bash
 export PYTHONPATH=$PYTHONPATH:/home/your_username/software/MPInterfaces
 ```
 As a quick tip, your `~/.bashrc` file lists any commands you want to run every time you log into Hipergator. So you could add a command to source your miniconda environment to this file if you wanted to, or have it `echo` you a welcome message every time you log in. To activate the changes you just made, type `source ~/.bashrc`. If you type `echo $PYTHONPATH`, it should end with `/home/your_username/software/MPInterfaces`.
@@ -70,7 +70,7 @@ MPInterfaces is a tool that will set up and launch VASP jobs for you based on so
 
 You need to edit the mpint_config.yaml file that came with MPInterfaces to contain your settings. First, copy the config file to its permanent location:
 
-```
+```bash
 $ cp /home/your_username/software/MPInterfaces/config_files/mpint_config.yaml /home/your_username/software/MPInterfaces/mpinterfaces/
 ```
 Then we'll edit the version of the configuration file under `/home/your_username/software/MPInterfaces/mpinterfaces/` with the following (use vim or emacs to edit the file):

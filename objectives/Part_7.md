@@ -8,14 +8,14 @@ It's possible you already have a POSCAR file on hand for a 2D material, but if y
 
 Upload that POSCAR file to your scratch filesystem on Hipergator:
 
-```
+~~~bash
 $ scp Downloads/POSCAR your_username@hpg2.rc.ufl.edu:/ufrc/hennig/your_username/
-```
+~~~
 
 ## Relaxing the 2D material and getting its band structure
 Then log onto Hipergator and navigate to your scratch directory. There, make a new directory for relaxing your 2D material. You might as well name it after the 2D material's formula. I'll use VSe2 (mw-64) as an example.
 
-```
+~~~python
 $ mkdir VSe2
 $ mv POSCAR VSe2
 $ cd VSe2
@@ -23,24 +23,26 @@ $ ipython
 In [1]: from mpinterfaces.mat2d.stability.startup import relax
 In [2]: relax()
 In [3]: exit
-```
+~~~
+
 I'll mention here that the VASP execution statement in the runjob file is different for this material than it was for Si. Instead of ``..../bin/vasp``, it should be ``..../bin/vasp_noz`` or something similar. That's important because 2D materials should have vacuum above and below them in their POSCAR file. To visualize this, load the POSCAR file you downloaded in to VESTA or whatever crystal structure visualization software you have. Normally when VASP is relaxing a structure, it would collapse that vacuum. ``vasp_noz`` is a special version of VASP designed specifically not to collapse vacuum regions.
 
 After your material has finished relaxing, check its job.log to make sure it converged okay. Technically, if you downloaded a structure from MaterialsWeb, it had already been relaxed by MPInterfaces before it was uploaded, so your relaxation should not take too long. If everything converged okay, then go ahead and run a band structure calculation just like you did for silicon before.
 
-```
+~~~python
 $ ipython
 In [1]: from mpinterfaces.mat2d.electronic_structure.startup import run_pbe_calculation
 In [2]: run_pbe_calculation()
 In [3]: exit
-```
+~~~
 
 When it's done, plot the band structure:
 
-```
+```python
 $ ipython
 In [1]: from mpinterfaces.mat2d.electronic_structure.analysis import plot_band_structure
 In [2]: plot_band_structure()
+In [3]: exit
 ```
 
 Is your material a metal or a semiconductor? Its band structure plot should look like the one on its data page on MaterialsWeb.
@@ -53,7 +55,7 @@ Open the [phase diagram app](https://materialsproject.org/#apps/phasediagram) on
 ## Calculating the material's hull distance
 To calculate our 2D material's hull distance, we need to download and relax the structures of the bulk materials below it on the convex hull diagram. MPInterfaces can do this automatically for us. Go into your 2D material's relaxation directory and run the following:
 
-```
+```python
 $ ipython
 In [1]: from mpinterfaces.mat2d.stability.analysis import get_competing_phases
 In [2]: print(get_competing_phases())
@@ -62,7 +64,7 @@ In [3]: exit
 ```
 That is the formula and Materials Project ID of the material directly below your 2D material on the convex hull. We need its energy, so let's download it and relax it. First make a directory called ``competing_phases`` in your top-level scratch directory (/ufrc/hennig/your_username/). Then go into that directory and make a directory named after the formula of the material (*e.g.* VSe2). To download its structure from the Materials Project, go into that new directory and do the following:
 
-```
+```python
 $ ipython
 In [1]: from pymatgen.matproj.rest import MPRester
 In [2]: from mpinterfaces import CONFIG_FILE
@@ -74,7 +76,7 @@ In [7]: exit
 ```
 Now your competing bulk phase is relaxing. Once it's done, you can compare its energy with the energy of your 2D material to get the hull distance by doing the following from within your 2D material's relaxation directory:
 
-```
+```python
 $ ipython
 In [1]: from mpinterfaces.mat2d.stability.analysis import get_hull_distance
 In [2]: print(get_hull_distance())

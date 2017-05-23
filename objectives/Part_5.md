@@ -63,7 +63,7 @@ POSCAR INCAR KPOINTS POTCAR
 ```
 Then you can submit your job to the compute nodes with the submission script below:
 
-```
+```bash
 #!/bin/bash
 #SBATCH --job-name=Si_relax
 #SBATCH -o out_%j.log
