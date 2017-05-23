@@ -47,11 +47,21 @@ ENCUT = 350
 IBRION = 2
 ISIF = 3
 ISMEAR = 0
-NSW = 1
+NSW = 50
 PREC = Accurate
 SIGMA = 0.1
 ```
-It's actually probably more helpful if you just look up what each tag in that INCAR means in the VASP wiki page.
+
+- **EDIFF**: The criteria for determining when your calculation has converged
+- **ENCUT**: The cutoff energy for the plane-wave basis set. Higher = more accurate and takes longer
+- **IBRION**: The algorithm used to relax your structure
+- **ISIF**: How many degrees of freedom to use while relaxing your structure
+- **ISMEAR**: How VASP should handle partially occupied electronic states
+- **NSW**: The number of ionic steps your relaxation is allowed to run
+- **PREC**: How precise your calculation will be
+- **SIGMA**: Width in eV for smearing partial occupancies
+
+It might also be helpful if you look up what each tag in that INCAR means in the VASP wiki page.
 
 4. **POTCAR**. This file contains information about the core and valence electrons of each element in your crystal structure. You don't actually write POTCAR files- these files come with VASP and we're not allowed to distribute them so contact someone in the group about where to find them on Hipergator.
 
