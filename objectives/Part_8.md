@@ -1,4 +1,4 @@
-# Part 8: Using <img src="http://pymatgen.org/_images/pymatgen.png" style="width:200px; position: relative; top: 12px; right: 15px;"/>
+# Part 8: Using Pymatgen
 
 Pymatgen is your friend! It was designed by people who are working on similar research projects to us, and it's a pretty well-tested piece of software. It can do a lot of things for you in a faster, cleaner and safer way than you could probably do it by hand. It's worth learning a little bit about how to use it now, while you're getting started on your research.
 
