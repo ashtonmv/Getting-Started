@@ -1,5 +1,5 @@
 # Part 5: Running your first VASP calculation: Si relaxation
-[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_4.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_6.md)
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_4.md) | [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_6.md)
 
 Now that you're basically familiar with the way Hipergator is set up, you can start submitting some of your own calculations.
 
@@ -172,4 +172,4 @@ This file is just like the job.log, but with a little less clutter (and, consequ
 
 The vasprun.xml is not designed for human-readability, but is very easy for a Python program like Pymatgen to parse. Like the OUTCAR, it contains all of the information about your calculation.
 
-[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_4.md) [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_6.md)
+[Previous](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_4.md) | [Next](https://github.com/ashtonmv/Getting-Started/blob/master/objectives/Part_6.md)
