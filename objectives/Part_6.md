@@ -7,8 +7,10 @@ A lot of the work you did in writing and reading files from the Si relaxation is
 ## Launching a basic relaxation
 Let's test out MPInterfaces for relaxing silicon. Go to your scratch (`cd /ufrc/hennig/your_username`) and make a new directory called `Si_mpinterfaces`. Copy the POSCAR file from `Si_test` to `Si_mpinterfaces`, and then go into Si_MPInterfaces. The easiest way to use MPInterfaces for launching jobs is to use ipython. So start an ipython session:
 
-```python
+```shell
 $ ipython
+```
+```python
 In [1]: from mpinterfaces.mat2d.stability.startup import relax
 In [2]: relax(dim=3)
 In [3]: exit
@@ -23,8 +25,10 @@ Now that we have the optimized structure, we can use it to accurately calculate 
 
 To get an accurate band structure, we need a different INCAR from the one we used for the relaxation, and we will also want to use different KPOINTS.  Everything else will be the same. MPInterfaces will handle all of this for us if you go into `Si_mpinterfaces` and do the following, after it has finished relaxing:
 
-```python
+```shell
 $ ipython
+```
+```python
 In [1]: from mpinterfaces.mat2d.electronic_structure.startup import run_pbe_calculation
 In [2]: run_pbe_calculation(dim=3)
 In [3]: exit
@@ -33,8 +37,10 @@ You should see that you now have a directory called `pbe_bands` inside of `Si_mp
 
 This calculation should also not take very long to run. Once it has finished, we can plot the band structure, also using MPInterfaces. From inside `pbe_bands`, run the following:
 
-```python
+```shell
 $ ipython
+```
+```python
 In [1]: from mpinterfaces.mat2d.electronic_structure.analysis import plot_band_structure
 In [2]: plot_band_structure()
 In [3]: exit

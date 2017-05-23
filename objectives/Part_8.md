@@ -19,8 +19,10 @@ If you click on **core**, you'll see a bunch of `.py` files and a few `.json` fi
 
 The most important file in here is probably `structure.py`. If you open this file, you can see that it is quite long. There is only one real object in this file that we use often, and it's the `Structure` object defined by the line that begins with `class Structure`. You can find this line by <kbd>⌘</kbd> + <kbd>f</kbd>. This `Structure` object has many *methods* associated with it, all listed in its source code on Github, that you will find very useful for manipulating crystal structures. Some examples (Run the following from within the `Si_mpinterfaces` directory you created a while ago):
 
-```python
+```shell
 $ ipython
+```
+```python
 # First, import the Structure class.
 In [1]: from pymatgen.core.structure import Structure
 # Create a Structure object by reading in
@@ -87,8 +89,10 @@ Hopefully you've gotten a taste of how useful the Structure object is in Pymatge
 ## The io module: Incar, Kpoints, and Vasprun objects
 Pymatgen has powerful classes for other VASP files, too. These are under `pymatgen/io/vasp/inputs.py` and `outputs.py`. Under `inputs.py`, you'll find the Incar and Kpoints objects. These are useful for creating the INCAR and KPOINTS files. Here's how they work:
 
-```python
+```shell
 $ ipython
+```
+```python
 In [1]: from pymatgen.io.vasp.inputs import Incar, Kpoints
 
 # Create an INCAR file based on a Python dictionary.
@@ -125,8 +129,10 @@ In [13]: exit
 ```
 The Vasprun object is defined inside of `outputs.py`. This is actually probably the single most useful object in Pymatgen, since the vasprun.xml stores essentially all of the information about your run. Using a Vasprun object, you can access the Structure objects based on your initial POSCAR and final CONTCAR structures, your kpoints, all of your incar parameters, the POTCAR you used, etc. You can even get the final energy of your calculation, along with the band structure and fermi energy you calculated. Here are some examples of how to use the Vasprun object:
 
-```python
+```shell
 $ ipython
+```
+```python
 In [1]: from pymatgen.io.vasp.outputs import Vasprun
 In [2]: vasprun = Vasprun("vasprun.xml")
 
