@@ -99,10 +99,14 @@ In [1]: from pymatgen.io.vasp.inputs import Incar, Kpoints
 # Create an INCAR file based on a Python dictionary.
 In [2]: incar_dict = {
    ...:     "PREC": "Accurate",
-   ...:     "PREC": "Accurate",
-   ...:     "PREC": "Accurate",
-   ...:     "PREC": "Accurate",
-   ...:     "PREC": "Accurate",
+   ...:     "EDIFF": 1e-04,
+   ...:     "ENCUT": 350,
+   ...:     "IBRION": 2,
+   ...:     "ISIF" 3,
+   ...:     "ISMEAR": 0,
+   ...:     "NSW": 50,
+   ...:     "PREC": Accurate,
+   ...:     "SIGMA": 0.1
    ...: }
 In [3]: incar = Incar.from_dict(incar_dict)
 In [4]: incar.write_file("INCAR_test")
