@@ -106,3 +106,15 @@ ax = plt.figure().gca()
 ax.plot([1, 2, 3, 4, 5], [1, 4, 9, 16, 25])
 plt.savefig('quadratic.pdf', transparent=True)
 ```
+
+**--- Save an iPython session to a file ---**
+
+Have you ever had a really brilliant iPython session that went dozens of lines long and then later wished you had saved it to a `.py` file so you could run it again? You're not alone. Here's how to save an iPython session to a file:
+
+```python
+...
+...
+...
+In [50]: %save filename 1-49
+The following commands were written to file `filename`:
+...
