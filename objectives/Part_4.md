@@ -13,13 +13,16 @@ It might be helpful to think of Hipergator as being 3 different partitions of no
 
 As you might have guessed, these are the nodes to which you log in when you connect via ``ssh`` to hipergator. Your ``/home/your_username`` directory is the most important thing located here. Everything you store here is automatically backed up and pretty safe, but you have a limited amount of storage so you don't want to store all your research data here. The main thing you will keep here are software packages that you install. Most users prefer to have a ``software/`` folder under their home folder so they can keep everything tidy. If you've been following the previous objectives, you should have a folder called ``miniconda3`` under your home folder.
 
-**--- Scratch storage nodes ---**
+**--- Scratch nodes ---**
 
-Okay, since you don't want to store your research data (which is often several hundred GB) under your home folder, where should you put it? That's what the scratch nodes are for. These guys are not backed up but you have a much larger allotment of storage here. Actually, the group shares a quota of a few TB, so it's still not nice to hog all of that up, but you can keep your research data here with no problem.
+The scratch nodes are for running calculations and temporarily storing data that is needed for current projects. Our group shares a quota a 5 TB on the scratch nodes, so you can hold more data here than in your home folder. That means that you should switch to these nodes whenever you're running calculations that generate data (i.e., pretty much every calculation). These nodes are located under ``/ufrc/`` (**UF** **R**esearch **C**omputing) on Hipergator. On other machines like Stampede, they're under ``/scratch/``. So to switch to them, simply ``cd /ufrc/hennig/your_username``. Most people end up creating subdirectories within their scratch folder to run calculations for difference projects and temporarily store the resulting data.
 
-That means that you should switch to these nodes whenever you're running calculations that generate data. These nodes are located under ``/ufrc/`` (**UF** **R**esearch **C**omputing) on Hipergator. On other machines like Stampede, they're under ``/scratch/``. So to switch to them, simply ``cd /ufrc/hennig/your_username``.
+Please note that these nodes are not intended for long-term data storage. They are not backed up, and any data you store there counts against our group's quota. From the Hipergator wiki:
 
-Eventually, you will create directories here to store your calculation results, etc. You want to submit your calculations from these nodes.
+> The /ufrc filesystem is essential to the overall performance of HiPerGator. It is not intended for long-term storage and should only be used for current computational projects. Once a project is finished, data should be moved to your personal, invested long-term, group, or department storage.
+
+Therefore, you should copy any large amounts of data that you no longer need for current calculations to your account on Hydrogen, where you have 1 TB of storage space in your home directory. Please don't leave hundreds of GBs of data in your scratch folder on Hipergator - it can cause our group's disk quota to be exceeded, at which point Hipergator kills everyone's calculations that try to write data to disk. 
+
 
 **--- Compute nodes ---**
 
