@@ -121,17 +121,13 @@ giving you some basic information about the job. Below that might be some warnin
 
 ```
 N       E                     dE             d eps       ncg     rms          rms(c)
-Total vdW correction in eV:    5.44740944070352
 DAV:   1     0.142822335994E+03    0.14282E+03   -0.13325E+04  7808   0.672E+02
 DAV:   2     0.620650629458E+01   -0.13662E+03   -0.12063E+03  7568   0.152E+02
 DAV:   3    -0.839822378505E+01   -0.14605E+02   -0.14484E+02  8464   0.499E+01
 DAV:   4    -0.860551850367E+01   -0.20729E+00   -0.20725E+00  7312   0.733E+00
 DAV:   5    -0.861013180243E+01   -0.46133E-02   -0.46132E-02  8848   0.120E+00    0.123E+01
-Total vdW correction in eV:    5.46516819513896
 RMM:   6    -0.726373637170E+01    0.13464E+01   -0.10124E+01  6491   0.153E+01    0.136E+01
-Total vdW correction in eV:    5.47503716575538
 RMM:   7    -0.690783802015E+01    0.35590E+00   -0.46268E-01  6983   0.384E+00    0.791E+00
-Total vdW correction in eV:    5.49248204046353
 RMM:   8    -0.686508522000E+01    0.42753E-01   -0.17091E-01  6384   0.240E+00    0.402E+00
 ```
 Each row in this part of the output is VASP calculating the total energy of the system based on its most recent guess at the electronic wavefunctions. In other words, VASP is trying out different electronic configurations for your material, and if a new configuration gives it a lower energy, VASP takes that as the new configuration and keeps going so on and so on until the changes in the system's energy are lower than the EDIFF you specified in your INCAR file. DAV and RMM are abbreviations for the names of the algorithms being used to update the wavefunctions between steps. The column labeled "E" are the energies VASP calculated, and the column labeled "dE" are the differences between that electron configuration's energy and the one prior. Don't worry about the other columns for now.

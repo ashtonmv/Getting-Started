@@ -45,6 +45,7 @@ and to deactivate it, simply type ``source deactivate``.
 If the environment is activated, you're ready to start installing the Python software packages we use in our group. To make sure your miniconda environment is working, type ``which python``, and it should say ``~/miniconda3/bin/python``. If it doesn't, deactivate and reactivate miniconda until it does. Then install Pymatgen, MPInterfaces and iPython:
 
 ```bash
+$ conda install numpy
 $ pip install pymatgen
 $ pip install ipython
 ```
