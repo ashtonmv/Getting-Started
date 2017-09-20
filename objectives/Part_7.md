@@ -78,8 +78,8 @@ $ ipython
 ```
 ```python
 In [1]: from pymatgen.matproj.rest import MPRester
-In [2]: from mpinterfaces import CONFIG_FILE
-In [3]: MPR = MPRester(CONFIG_FILE["mp_api"])
+In [2]: from mpinterfaces import MPINT_CONFIG
+In [3]: MPR = MPRester(MPINT_CONFIG["mp_api"])
 In [4]: MPR.get_structure_by_material_id("mp-694").to("POSCAR", "POSCAR")
 In [5]: from mpinterfaces.mat2d.stability.startup import relax
 In [6]: relax(dim=3)
